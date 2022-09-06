@@ -1,0 +1,40 @@
+
+/* Large devices (laptops/desktops, 700px and up) */
+@media only screen and (min-width: 700px) {
+    .main{
+        justify-content: center;
+        flex-wrap: wrap-reverse;
+    }
+    .wrapper table{
+        min-width: 500px;
+        width: 800px;
+        height: 450px;
+    }
+    footer{
+        font-size: 14px;
+    }
+    table td input{
+        -ms-transform: scale(1.4); /* IE */
+        -moz-transform: scale(1.4); /* FF */
+        -webkit-transform: scale(1.4); /* Safari and Chrome */
+        transform: scale(1.4);
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1250px) {
+    .main{
+        justify-content: space-between;
+        flex-wrap:nowrap;
+    }
+    .wrapper table{
+        width: 700px;
+        height: 450px;
+    }
+    footer{
+        position:absolute; 
+        bottom:0; 
+        left:0;
+        font-size: 14px;
+    }
+}
