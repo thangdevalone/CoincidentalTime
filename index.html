@@ -287,14 +287,17 @@
                 </table>
             </div>
             <button class="btn btn__submit--data">
-                Gửi đi!
+                
             </button>
         </div>
         
     </div>
+    
+
+    <!--------------------------------------------------------modal---------------------------------------  -->
     <div class="modal">
-        <div class="modal__success">
-            <div class="exit exit__success">
+        <div class="modal__success  modal--container">
+            <div onclick="exit(0)" class="exit exit__success">
                 <i class="fa-solid fa-circle-xmark"></i>
             </div>
             <div class="icon--ting">
@@ -308,12 +311,12 @@
                 </div>
             </div>
             <div class="message">
-                Đã gửi dữ liệu thành công
+               
             </div>
         </div>
     </div>
     <div class="modal open">
-        <div class="modal__login">
+        <div class="modal__login  modal--container">
             <div class="header">
                 Nhập thông tin
             </div>
@@ -329,6 +332,28 @@
             </div>
             <div>
                 <button class="btn btn__submit--infor">Gửi đi!</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal">
+        <div class="modal__data modal--container">
+            <div onclick="exit(2)" class="exit exit__success">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </div>
+            <div class="header">
+                Thông tin người đã đăng kí<br/>[<span class="day"></span>, <span class="hour"></span> giờ]
+            </div>
+            <div class="list">
+                <div class="list--header">
+                    <div class="ten col-1-3">Họ tên</div>
+                    <div class="masinhvien col-1-3">
+                        Mã sinh viên
+                    </div>
+                    <div class="lop col-1-3">lớp</div>
+                </div>
+                <div class="list--body">
+                    
+                </div>
             </div>
         </div>
     </div>
