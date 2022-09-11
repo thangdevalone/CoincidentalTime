@@ -14,13 +14,12 @@ const api='https://6308f3a0722029d9dddc15b7.mockapi.io/api/v1/DataUserTime'
 const allModal=document.querySelectorAll('.modal')
 const message=document.querySelector('.message')
 
-const articleName=document.querySelector('.article__name')
-const articleClass=document.querySelector('.article__class')
-const articleMsv=document.querySelector('.article__msv')
+const articleName=document.querySelectorAll('.article__name')
+const articleClass=document.querySelectorAll('.article__class')
+const articleMsv=document.querySelectorAll('.article__msv')
 
 
 function check(isPost){
-    console.log(isPost)
     if (isPost){
         document.querySelector(".main__register .wrapper").style.pointerEvents="none";
     }
@@ -50,10 +49,14 @@ check(isPost)
 render() // render data
 
 function updateInfor(namePerson,msv,classPerson){
-    articleName.innerHTML=namePerson
-    articleClass.innerHTML=classPerson
-    articleMsv.innerHTML=msv
+    for(let i=0;i<articleName.length;i++){
+        articleName[i].innerHTML=namePerson
+        articleClass[i].innerHTML=classPerson
+        articleMsv[i].innerHTML=msv
+    }
 }
+
+// Kiểm tra đăng nhập
 if(isLogin){
     updateInfor(namePerson,classPerson,msv)
     allModal[1].classList.remove('open')
@@ -76,7 +79,7 @@ async function postData(url = '', data = {}) {
         }
     const response = await fetch(url,options);
     return response.json();
-  }
+}
 
 async function delData(url = ''){
     const response=await fetch(url,{method: 'DELETE'}) 
@@ -91,7 +94,27 @@ function createArrayId(nodelist){
    return arrayId; 
 }
 function exit(i){
+    if(i===3){
+        const body=document.querySelector('body');
+        document.querySelector('.modal__thongke--toolbar').innerHTML=`
+        <span class="thongke__header">Toolbar</span>
+        
+        `
+        document.querySelector('.modal__thongke--data').innerHTML=`
+        <span class="thongke__header">Resuilt</span>
+        `
+        const thongkeFeatures=document.querySelectorAll('.thongke--feature')
+        thongkeFeatures.forEach((feature)=>{
+
+            if(feature.classList.contains('featuring')){
+                feature.classList.remove('featuring');
+            }
+        })
+        
+        body.style.overflowY == 'hidden'?body.style.overflowY ='scroll': body.style.overflowY ='hidden'
+    }
     allModal[i].classList.remove('open')
+   
 }
    
 
@@ -99,11 +122,10 @@ function exit(i){
 
 
 
-
 btnInfor.addEventListener('click',()=>{
-    namePerson=document.querySelector('.login--name').value
-    msv=document.querySelector('.login--msv').value
-    classPerson=document.querySelector('.login--class').value
+    namePerson=document.querySelector('.login--name').value||'Unknown'
+    msv=document.querySelector('.login--msv').value||'Unknown'
+    classPerson=document.querySelector('.login--class').value||'Unknown'
     localStorage.setItem('nameKey',namePerson)
     localStorage.setItem('msvKey',msv)
     localStorage.setItem('classKey',classPerson)
@@ -135,7 +157,6 @@ btnSubmit.addEventListener('click', ()=>{
                 localStorage.setItem('id',item.id);
                 renderCoutingPeople(item);
                 })
-                
         } else {
             isPost=0
             btnSubmit.innerHTML='Gửi đi!'
@@ -194,9 +215,9 @@ tableResuilt.addEventListener('click',(e)=>{
     const idNoConvert=tdCursor.querySelector("span span").id
     const idDay=Number(idNoConvert[2])-1
     const idTime=idNoConvert.length<6?Number(idNoConvert[4])-1:Number(idNoConvert.slice(4,6))-1
-    allModal[2].classList.toggle('open')
     const day= DATE[idDay]
     const time=TIME[idTime]
+    allModal[2].classList.toggle('open')
     document.querySelector('.day').innerHTML=day
     document.querySelector('.hour').innerHTML=time
     getData(api,(response) => {

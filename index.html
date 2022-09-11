@@ -13,6 +13,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="./Source/css/grid.css">
+    <link rel="stylesheet" href="./Source/css/loader.css">
     <link rel="stylesheet" href="./Source/css/styles.css">
     <link rel="stylesheet" href="./Source/css/success.css">
     <link rel="stylesheet" href="./Source/css/responsive.css">
@@ -22,276 +24,281 @@
 <body>
     
     <div class="main">
-        <div class="main__resuilt">
-            <article>
-                <div class="article--infor">
-                    Họ tên: <span class="article__name"></span>
-                </div>
-                <div class="article--infor">
-                    Mã sinh viên: <span class="article__msv"></span>
-                </div>
-                <div class="article--infor">
-                    Lớp: <span class="article__class"></span>
-                </div>
-            </article>
-            <div class="wrapper">
-                <table>
-                    <caption>Thời gian biểu chung</caption>
-                    <tr>
-                        <th>Time</th>
-                        <th>Monday</th>
-                        <th>Tuesday</th>
-                        <th>Wednesday</th>
-                        <th>Thursday</th>
-                        <th>Friday</th>
-                        <th>Saturday</th>
-                        <th>Sunday</th>
-                    </tr>
-                    <tr>
-                        <td>7:00-8:00</td>
-                        <td><span><span id="id1_1">0</span> People </span></td>
-                        <td><span><span id="id2_1">0</span> People </span></td>
-                        <td><span><span id="id3_1">0</span> People </span></td>
-                        <td><span><span id="id4_1">0</span> People </span></td>
-                        <td><span><span id="id5_1">0</span> People </span></td>
-                        <td><span><span id="id6_1">0</span> People </span></td>
-                        <td><span><span id="id7_1">0</span> People </span></td>
-                    </tr>
-                    <tr>
-                        <td>8:00-9:00</td>
-                        <td><span><span id="id1_2">0</span> People </span></td>
-                        <td><span><span id="id2_2">0</span> People </span></td>
-                        <td><span><span id="id3_2">0</span> People </span></td>
-                        <td><span><span id="id4_2">0</span> People </span></td>
-                        <td><span><span id="id5_2">0</span> People </span></td>
-                        <td><span><span id="id6_2">0</span> People </span></td>
-                        <td><span><span id="id7_2">0</span> People </span></td>
-                    </tr>
-                    <tr>
-                        <td>9:00-10:00</td>
-                        <td><span><span id="id1_3">0</span> People </span></td>
-                        <td><span><span id="id2_3">0</span> People </span></td>
-                        <td><span><span id="id3_3">0</span> People </span></td>
-                        <td><span><span id="id4_3">0</span> People </span></td>
-                        <td><span><span id="id5_3">0</span> People </span></td>
-                        <td><span><span id="id6_3">0</span> People </span></td>
-                        <td><span><span id="id7_3">0</span> People </span></td>
-                    </tr>
-                    <tr>
-                        <td>10:00-11:00</td>
-                        <td><span><span id="id1_4">0</span> People </span></td>
-                        <td><span><span id="id2_4">0</span> People </span></td>
-                        <td><span><span id="id3_4">0</span> People </span></td>
-                        <td><span><span id="id4_4">0</span> People </span></td>
-                        <td><span><span id="id5_4">0</span> People </span></td>
-                        <td><span><span id="id6_4">0</span> People </span></td>
-                        <td><span><span id="id7_4">0</span> People </span></td>
-                    </tr>
-                    <tr>
-                        <td>11:00-12:00</td>
-                        <td><span><span id="id1_5">0</span> People </span></td>
-                        <td><span><span id="id2_5">0</span> People </span></td>
-                        <td><span><span id="id3_5">0</span> People </span></td>
-                        <td><span><span id="id4_5">0</span> People </span></td>
-                        <td><span><span id="id5_5">0</span> People </span></td>
-                        <td><span><span id="id6_5">0</span> People </span></td>
-                        <td><span><span id="id7_5">0</span> People </span></td>
-                    </tr>
-                    <tr>
-                        <td>12:00-13:00</td>
-                        <td><span><span id="id1_6">0</span> People </span></td>
-                        <td><span><span id="id2_6">0</span> People </span></td>
-                        <td><span><span id="id3_6">0</span> People </span></td>
-                        <td><span><span id="id4_6">0</span> People </span></td>
-                        <td><span><span id="id5_6">0</span> People </span></td>
-                        <td><span><span id="id6_6">0</span> People </span></td>
-                        <td><span><span id="id7_6">0</span> People </span></td>
-                    </tr>
-                    <tr>
-                        <td>13:00-14:00</td>
-                        <td><span><span id="id1_7">0</span> People </span></td>
-                        <td><span><span id="id2_7">0</span> People </span></td>
-                        <td><span><span id="id3_7">0</span> People </span></td>
-                        <td><span><span id="id4_7">0</span> People </span></td>
-                        <td><span><span id="id5_7">0</span> People </span></td>
-                        <td><span><span id="id6_7">0</span> People </span></td>
-                        <td><span><span id="id7_7">0</span> People </span></td>
-                    </tr>
-                    <tr>
-                        <td>14:00-15:00</td>
-                        <td><span><span id="id1_8">0</span> People </span></td>
-                        <td><span><span id="id2_8">0</span> People </span></td>
-                        <td><span><span id="id3_8">0</span> People </span></td>
-                        <td><span><span id="id4_8">0</span> People </span></td>
-                        <td><span><span id="id5_8">0</span> People </span></td>
-                        <td><span><span id="id6_8">0</span> People </span></td>
-                        <td><span><span id="id7_8">0</span> People </span></td>
-                    </tr>
-                    <tr>
-                        <td>15:00-16:00</td>
-                        <td><span><span id="id1_9">0</span> People </span></td>
-                        <td><span><span id="id2_9">0</span> People </span></td>
-                        <td><span><span id="id3_9">0</span> People </span></td>
-                        <td><span><span id="id4_9">0</span> People </span></td>
-                        <td><span><span id="id5_9">0</span> People </span></td>
-                        <td><span><span id="id6_9">0</span> People </span></td>
-                        <td><span><span id="id7_9">0</span> People </span></td>
-                    </tr>
-                    <tr>
-                        <td>16:00-17:00</td>
-                        <td><span><span id="id1_10">0</span> People </span></td>
-                        <td><span><span id="id2_10">0</span> People </span></td>
-                        <td><span><span id="id3_10">0</span> People </span></td>
-                        <td><span><span id="id4_10">0</span> People </span></td>
-                        <td><span><span id="id5_10">0</span> People </span></td>
-                        <td><span><span id="id6_10">0</span> People </span></td>
-                        <td><span><span id="id7_10">0</span> People </span></td>
-                    </tr>
-                    <tr>
-                        <td>17:00-18:00</td>
-                        <td><span><span id="id1_11">0</span> People </span></td>
-                        <td><span><span id="id2_11">0</span> People </span></td>
-                        <td><span><span id="id3_11">0</span> People </span></td>
-                        <td><span><span id="id4_11">0</span> People </span></td>
-                        <td><span><span id="id5_11">0</span> People </span></td>
-                        <td><span><span id="id6_11">0</span> People </span></td>
-                        <td><span><span id="id7_11">0</span> People </span></td>
-                    </tr>
-                </table>
+        <article>
+            <div class="article--infor">
+                Họ tên: <span class="article__name"></span>
             </div>
-        </div>
-        <div class="main__register">
-            <div class="wrapper">
-                <table>
-                    <caption>Đăng kí khung giờ</caption>
-                    <tr>
-                        <th>Time</th>
-                        <th>Monday</th>
-                        <th>Tuesday</th>
-                        <th>Wednesday</th>
-                        <th>Thursday</th>
-                        <th>Friday</th>
-                        <th>Saturday</th>
-                        <th>Sunday</th>
-                    </tr>
-                    <tr>
-                        <td>7:00-8:00</td>
-                        <td><input type="checkbox" name="" id="1_1"></td>
-                        <td><input type="checkbox" name="" id="2_1"></td>
-                        <td><input type="checkbox" name="" id="3_1"></td>
-                        <td><input type="checkbox" name="" id="4_1"></td>
-                        <td><input type="checkbox" name="" id="5_1"></td>
-                        <td><input type="checkbox" name="" id="6_1"></td>
-                        <td><input type="checkbox" name="" id="7_1"></td>
-                    </tr>
-                    <tr>
-                        <td>8:00-9:00</td>
-                        <td><input type="checkbox" name="" id="1_2"></td>
-                        <td><input type="checkbox" name="" id="2_2"></td>
-                        <td><input type="checkbox" name="" id="3_2"></td>
-                        <td><input type="checkbox" name="" id="4_2"></td>
-                        <td><input type="checkbox" name="" id="5_2"></td>
-                        <td><input type="checkbox" name="" id="6_2"></td>
-                        <td><input type="checkbox" name="" id="7_2"></td>
-                    </tr>
-                    <tr>
-                        <td>9:00-10:00</td>
-                        <td><input type="checkbox" name="" id="1_3"></td>
-                        <td><input type="checkbox" name="" id="2_3"></td>
-                        <td><input type="checkbox" name="" id="3_3"></td>
-                        <td><input type="checkbox" name="" id="4_3"></td>
-                        <td><input type="checkbox" name="" id="5_3"></td>
-                        <td><input type="checkbox" name="" id="6_3"></td>
-                        <td><input type="checkbox" name="" id="7_3"></td>
-                    </tr>
-                    <tr>
-                        <td>10:00-11:00</td>
-                        <td><input type="checkbox" name="" id="1_4"></td>
-                        <td><input type="checkbox" name="" id="2_4"></td>
-                        <td><input type="checkbox" name="" id="3_4"></td>
-                        <td><input type="checkbox" name="" id="4_4"></td>
-                        <td><input type="checkbox" name="" id="5_4"></td>
-                        <td><input type="checkbox" name="" id="6_4"></td>
-                        <td><input type="checkbox" name="" id="7_4"></td>
-                    </tr>
-                    <tr>
-                        <td>11:00-12:00</td>
-                        <td><input type="checkbox" name="" id="1_5"></td>
-                        <td><input type="checkbox" name="" id="2_5"></td>
-                        <td><input type="checkbox" name="" id="3_5"></td>
-                        <td><input type="checkbox" name="" id="4_5"></td>
-                        <td><input type="checkbox" name="" id="5_5"></td>
-                        <td><input type="checkbox" name="" id="6_5"></td>
-                        <td><input type="checkbox" name="" id="7_5"></td>
-                    </tr>
-                    <tr>
-                        <td>12:00-13:00</td>
-                        <td><input type="checkbox" name="" id="1_6"></td>
-                        <td><input type="checkbox" name="" id="2_6"></td>
-                        <td><input type="checkbox" name="" id="3_6"></td>
-                        <td><input type="checkbox" name="" id="4_6"></td>
-                        <td><input type="checkbox" name="" id="5_6"></td>
-                        <td><input type="checkbox" name="" id="6_6"></td>
-                        <td><input type="checkbox" name="" id="7_6"></td>
-                    </tr>
-                    <tr>
-                        <td>13:00-14:00</td>
-                        <td><input type="checkbox" name="" id="1_7"></td>
-                        <td><input type="checkbox" name="" id="2_7"></td>
-                        <td><input type="checkbox" name="" id="3_7"></td>
-                        <td><input type="checkbox" name="" id="4_7"></td>
-                        <td><input type="checkbox" name="" id="5_7"></td>
-                        <td><input type="checkbox" name="" id="6_7"></td>
-                        <td><input type="checkbox" name="" id="7_7"></td>
-                    </tr>
-                    <tr>
-                        <td>14:00-15:00</td>
-                        <td><input type="checkbox" name="" id="1_8"></td>
-                        <td><input type="checkbox" name="" id="2_8"></td>
-                        <td><input type="checkbox" name="" id="3_8"></td>
-                        <td><input type="checkbox" name="" id="4_8"></td>
-                        <td><input type="checkbox" name="" id="5_8"></td>
-                        <td><input type="checkbox" name="" id="6_8"></td>
-                        <td><input type="checkbox" name="" id="7_8"></td>
-                    </tr>
-                    <tr>
-                        <td>15:00-16:00</td>
-                        <td><input type="checkbox" name="" id="1_9"></td>
-                        <td><input type="checkbox" name="" id="2_9"></td>
-                        <td><input type="checkbox" name="" id="3_9"></td>
-                        <td><input type="checkbox" name="" id="4_9"></td>
-                        <td><input type="checkbox" name="" id="5_9"></td>
-                        <td><input type="checkbox" name="" id="6_9"></td>
-                        <td><input type="checkbox" name="" id="7_9"></td>
-                    </tr>
-                    <tr>
-                        <td>16:00-17:00</td>
-                        <td><input type="checkbox" name="" id="1_10"></td>
-                        <td><input type="checkbox" name="" id="2_10"></td>
-                        <td><input type="checkbox" name="" id="3_10"></td>
-                        <td><input type="checkbox" name="" id="4_10"></td>
-                        <td><input type="checkbox" name="" id="5_10"></td>
-                        <td><input type="checkbox" name="" id="6_10"></td>
-                        <td><input type="checkbox" name="" id="7_10"></td>
-                    </tr>
-                    <tr>
-                        <td>17:00-18:00</td>
-                        <td><input type="checkbox" name="" id="1_11"></td>
-                        <td><input type="checkbox" name="" id="2_11"></td>
-                        <td><input type="checkbox" name="" id="3_11"></td>
-                        <td><input type="checkbox" name="" id="4_11"></td>
-                        <td><input type="checkbox" name="" id="5_11"></td>
-                        <td><input type="checkbox" name="" id="6_11"></td>
-                        <td><input type="checkbox" name="" id="7_11"></td>
-                    </tr>
-                </table>
+            <div class="article--infor">
+                Mã sinh viên: <span class="article__msv"></span>
             </div>
-            <button class="btn btn__submit--data">
-                
-            </button>
+            <div class="article--infor">
+                Lớp: <span class="article__class"></span>
+            </div>
+        </article>
+        <div class="container">
+            <div class="main__resuilt">
+                <div class="wrapper">
+                    <table>
+                        <caption>Thời gian biểu chung</caption>
+                        <tr>
+                            <th>Time</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                            <th>Sunday</th>
+                        </tr>
+                        <tr>
+                            <td>7:00-8:00</td>
+                            <td><span><span id="id1_1">0</span> People </span></td>
+                            <td><span><span id="id2_1">0</span> People </span></td>
+                            <td><span><span id="id3_1">0</span> People </span></td>
+                            <td><span><span id="id4_1">0</span> People </span></td>
+                            <td><span><span id="id5_1">0</span> People </span></td>
+                            <td><span><span id="id6_1">0</span> People </span></td>
+                            <td><span><span id="id7_1">0</span> People </span></td>
+                        </tr>
+                        <tr>
+                            <td>8:00-9:00</td>
+                            <td><span><span id="id1_2">0</span> People </span></td>
+                            <td><span><span id="id2_2">0</span> People </span></td>
+                            <td><span><span id="id3_2">0</span> People </span></td>
+                            <td><span><span id="id4_2">0</span> People </span></td>
+                            <td><span><span id="id5_2">0</span> People </span></td>
+                            <td><span><span id="id6_2">0</span> People </span></td>
+                            <td><span><span id="id7_2">0</span> People </span></td>
+                        </tr>
+                        <tr>
+                            <td>9:00-10:00</td>
+                            <td><span><span id="id1_3">0</span> People </span></td>
+                            <td><span><span id="id2_3">0</span> People </span></td>
+                            <td><span><span id="id3_3">0</span> People </span></td>
+                            <td><span><span id="id4_3">0</span> People </span></td>
+                            <td><span><span id="id5_3">0</span> People </span></td>
+                            <td><span><span id="id6_3">0</span> People </span></td>
+                            <td><span><span id="id7_3">0</span> People </span></td>
+                        </tr>
+                        <tr>
+                            <td>10:00-11:00</td>
+                            <td><span><span id="id1_4">0</span> People </span></td>
+                            <td><span><span id="id2_4">0</span> People </span></td>
+                            <td><span><span id="id3_4">0</span> People </span></td>
+                            <td><span><span id="id4_4">0</span> People </span></td>
+                            <td><span><span id="id5_4">0</span> People </span></td>
+                            <td><span><span id="id6_4">0</span> People </span></td>
+                            <td><span><span id="id7_4">0</span> People </span></td>
+                        </tr>
+                        <tr>
+                            <td>11:00-12:00</td>
+                            <td><span><span id="id1_5">0</span> People </span></td>
+                            <td><span><span id="id2_5">0</span> People </span></td>
+                            <td><span><span id="id3_5">0</span> People </span></td>
+                            <td><span><span id="id4_5">0</span> People </span></td>
+                            <td><span><span id="id5_5">0</span> People </span></td>
+                            <td><span><span id="id6_5">0</span> People </span></td>
+                            <td><span><span id="id7_5">0</span> People </span></td>
+                        </tr>
+                        <tr>
+                            <td>12:00-13:00</td>
+                            <td><span><span id="id1_6">0</span> People </span></td>
+                            <td><span><span id="id2_6">0</span> People </span></td>
+                            <td><span><span id="id3_6">0</span> People </span></td>
+                            <td><span><span id="id4_6">0</span> People </span></td>
+                            <td><span><span id="id5_6">0</span> People </span></td>
+                            <td><span><span id="id6_6">0</span> People </span></td>
+                            <td><span><span id="id7_6">0</span> People </span></td>
+                        </tr>
+                        <tr>
+                            <td>13:00-14:00</td>
+                            <td><span><span id="id1_7">0</span> People </span></td>
+                            <td><span><span id="id2_7">0</span> People </span></td>
+                            <td><span><span id="id3_7">0</span> People </span></td>
+                            <td><span><span id="id4_7">0</span> People </span></td>
+                            <td><span><span id="id5_7">0</span> People </span></td>
+                            <td><span><span id="id6_7">0</span> People </span></td>
+                            <td><span><span id="id7_7">0</span> People </span></td>
+                        </tr>
+                        <tr>
+                            <td>14:00-15:00</td>
+                            <td><span><span id="id1_8">0</span> People </span></td>
+                            <td><span><span id="id2_8">0</span> People </span></td>
+                            <td><span><span id="id3_8">0</span> People </span></td>
+                            <td><span><span id="id4_8">0</span> People </span></td>
+                            <td><span><span id="id5_8">0</span> People </span></td>
+                            <td><span><span id="id6_8">0</span> People </span></td>
+                            <td><span><span id="id7_8">0</span> People </span></td>
+                        </tr>
+                        <tr>
+                            <td>15:00-16:00</td>
+                            <td><span><span id="id1_9">0</span> People </span></td>
+                            <td><span><span id="id2_9">0</span> People </span></td>
+                            <td><span><span id="id3_9">0</span> People </span></td>
+                            <td><span><span id="id4_9">0</span> People </span></td>
+                            <td><span><span id="id5_9">0</span> People </span></td>
+                            <td><span><span id="id6_9">0</span> People </span></td>
+                            <td><span><span id="id7_9">0</span> People </span></td>
+                        </tr>
+                        <tr>
+                            <td>16:00-17:00</td>
+                            <td><span><span id="id1_10">0</span> People </span></td>
+                            <td><span><span id="id2_10">0</span> People </span></td>
+                            <td><span><span id="id3_10">0</span> People </span></td>
+                            <td><span><span id="id4_10">0</span> People </span></td>
+                            <td><span><span id="id5_10">0</span> People </span></td>
+                            <td><span><span id="id6_10">0</span> People </span></td>
+                            <td><span><span id="id7_10">0</span> People </span></td>
+                        </tr>
+                        <tr>
+                            <td>17:00-18:00</td>
+                            <td><span><span id="id1_11">0</span> People </span></td>
+                            <td><span><span id="id2_11">0</span> People </span></td>
+                            <td><span><span id="id3_11">0</span> People </span></td>
+                            <td><span><span id="id4_11">0</span> People </span></td>
+                            <td><span><span id="id5_11">0</span> People </span></td>
+                            <td><span><span id="id6_11">0</span> People </span></td>
+                            <td><span><span id="id7_11">0</span> People </span></td>
+                        </tr>
+                    </table>
+                </div>
+                <button class="btn btn__thongke">
+                    Thống kê dữ liệu
+                </button>
+            </div>
+            <div class="main__register">
+                <div class="wrapper">
+                    <table>
+                        <caption>Đăng kí khung giờ</caption>
+                        <tr>
+                            <th>Time</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                            <th>Sunday</th>
+                        </tr>
+                        <tr>
+                            <td>7:00-8:00</td>
+                            <td><input type="checkbox" name="" id="1_1"></td>
+                            <td><input type="checkbox" name="" id="2_1"></td>
+                            <td><input type="checkbox" name="" id="3_1"></td>
+                            <td><input type="checkbox" name="" id="4_1"></td>
+                            <td><input type="checkbox" name="" id="5_1"></td>
+                            <td><input type="checkbox" name="" id="6_1"></td>
+                            <td><input type="checkbox" name="" id="7_1"></td>
+                        </tr>
+                        <tr>
+                            <td>8:00-9:00</td>
+                            <td><input type="checkbox" name="" id="1_2"></td>
+                            <td><input type="checkbox" name="" id="2_2"></td>
+                            <td><input type="checkbox" name="" id="3_2"></td>
+                            <td><input type="checkbox" name="" id="4_2"></td>
+                            <td><input type="checkbox" name="" id="5_2"></td>
+                            <td><input type="checkbox" name="" id="6_2"></td>
+                            <td><input type="checkbox" name="" id="7_2"></td>
+                        </tr>
+                        <tr>
+                            <td>9:00-10:00</td>
+                            <td><input type="checkbox" name="" id="1_3"></td>
+                            <td><input type="checkbox" name="" id="2_3"></td>
+                            <td><input type="checkbox" name="" id="3_3"></td>
+                            <td><input type="checkbox" name="" id="4_3"></td>
+                            <td><input type="checkbox" name="" id="5_3"></td>
+                            <td><input type="checkbox" name="" id="6_3"></td>
+                            <td><input type="checkbox" name="" id="7_3"></td>
+                        </tr>
+                        <tr>
+                            <td>10:00-11:00</td>
+                            <td><input type="checkbox" name="" id="1_4"></td>
+                            <td><input type="checkbox" name="" id="2_4"></td>
+                            <td><input type="checkbox" name="" id="3_4"></td>
+                            <td><input type="checkbox" name="" id="4_4"></td>
+                            <td><input type="checkbox" name="" id="5_4"></td>
+                            <td><input type="checkbox" name="" id="6_4"></td>
+                            <td><input type="checkbox" name="" id="7_4"></td>
+                        </tr>
+                        <tr>
+                            <td>11:00-12:00</td>
+                            <td><input type="checkbox" name="" id="1_5"></td>
+                            <td><input type="checkbox" name="" id="2_5"></td>
+                            <td><input type="checkbox" name="" id="3_5"></td>
+                            <td><input type="checkbox" name="" id="4_5"></td>
+                            <td><input type="checkbox" name="" id="5_5"></td>
+                            <td><input type="checkbox" name="" id="6_5"></td>
+                            <td><input type="checkbox" name="" id="7_5"></td>
+                        </tr>
+                        <tr>
+                            <td>12:00-13:00</td>
+                            <td><input type="checkbox" name="" id="1_6"></td>
+                            <td><input type="checkbox" name="" id="2_6"></td>
+                            <td><input type="checkbox" name="" id="3_6"></td>
+                            <td><input type="checkbox" name="" id="4_6"></td>
+                            <td><input type="checkbox" name="" id="5_6"></td>
+                            <td><input type="checkbox" name="" id="6_6"></td>
+                            <td><input type="checkbox" name="" id="7_6"></td>
+                        </tr>
+                        <tr>
+                            <td>13:00-14:00</td>
+                            <td><input type="checkbox" name="" id="1_7"></td>
+                            <td><input type="checkbox" name="" id="2_7"></td>
+                            <td><input type="checkbox" name="" id="3_7"></td>
+                            <td><input type="checkbox" name="" id="4_7"></td>
+                            <td><input type="checkbox" name="" id="5_7"></td>
+                            <td><input type="checkbox" name="" id="6_7"></td>
+                            <td><input type="checkbox" name="" id="7_7"></td>
+                        </tr>
+                        <tr>
+                            <td>14:00-15:00</td>
+                            <td><input type="checkbox" name="" id="1_8"></td>
+                            <td><input type="checkbox" name="" id="2_8"></td>
+                            <td><input type="checkbox" name="" id="3_8"></td>
+                            <td><input type="checkbox" name="" id="4_8"></td>
+                            <td><input type="checkbox" name="" id="5_8"></td>
+                            <td><input type="checkbox" name="" id="6_8"></td>
+                            <td><input type="checkbox" name="" id="7_8"></td>
+                        </tr>
+                        <tr>
+                            <td>15:00-16:00</td>
+                            <td><input type="checkbox" name="" id="1_9"></td>
+                            <td><input type="checkbox" name="" id="2_9"></td>
+                            <td><input type="checkbox" name="" id="3_9"></td>
+                            <td><input type="checkbox" name="" id="4_9"></td>
+                            <td><input type="checkbox" name="" id="5_9"></td>
+                            <td><input type="checkbox" name="" id="6_9"></td>
+                            <td><input type="checkbox" name="" id="7_9"></td>
+                        </tr>
+                        <tr>
+                            <td>16:00-17:00</td>
+                            <td><input type="checkbox" name="" id="1_10"></td>
+                            <td><input type="checkbox" name="" id="2_10"></td>
+                            <td><input type="checkbox" name="" id="3_10"></td>
+                            <td><input type="checkbox" name="" id="4_10"></td>
+                            <td><input type="checkbox" name="" id="5_10"></td>
+                            <td><input type="checkbox" name="" id="6_10"></td>
+                            <td><input type="checkbox" name="" id="7_10"></td>
+                        </tr>
+                        <tr>
+                            <td>17:00-18:00</td>
+                            <td><input type="checkbox" name="" id="1_11"></td>
+                            <td><input type="checkbox" name="" id="2_11"></td>
+                            <td><input type="checkbox" name="" id="3_11"></td>
+                            <td><input type="checkbox" name="" id="4_11"></td>
+                            <td><input type="checkbox" name="" id="5_11"></td>
+                            <td><input type="checkbox" name="" id="6_11"></td>
+                            <td><input type="checkbox" name="" id="7_11"></td>
+                        </tr>
+                    </table>
+                </div>
+                <button class="btn btn__submit--data">
+                    
+                </button>
+            </div>
+            
         </div>
-        
-    </div>
+        </div>
     
 
     <!--------------------------------------------------------modal---------------------------------------  -->
@@ -357,11 +364,60 @@
             </div>
         </div>
     </div>
+    <div class="modal">
+        <div class="modal__thongke modal--container">
+            <article>
+                <div class="article--infor">
+                    Họ tên: <span class="article__name"></span>
+                </div>
+                <div class="article--infor">
+                    Mã sinh viên: <span class="article__msv"></span>
+                </div>
+                <div class="article--infor">
+                    Lớp: <span class="article__class"></span>
+                </div>
+            </article>
+            <div class="modal__thongke--main">
+
+                <div onclick="exit(3)" class="exit exit__success">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </div>
+                <div class="header">
+                    Thống kê dữ liệu
+                </div>
+                <div class="modal__thongke--body">
+                    <div class="modal__thongke--features row col-1-5">
+                        <span class="thongke__header">Features</span>
+                        <div class="thongke--feature fearture__filter"><i class="fa-solid fa-filter"></i> Filter data</div>
+                        <div class="thongke--feature fearture__list"><i class="fa-solid fa-list"></i> List data</div>
+                        <div class="thongke--feature fearture__Search"><i class="fa-solid fa-magnifying-glass"></i> Search data</div>
+                        <div class="thongke--feature fearture__Resuilt"><i class="fa-solid fa-square-poll-vertical"></i> Feedback resuilt</div>
+
+
+                    </div>
+                    <div class="display--flex flex-col col-4-5">
+                        <div class="modal__thongke--toolbar row-2-7">
+                            <span class="thongke__header">Toolbar</span>
+        
+                            
+                        </div>
+                        <div class="modal__thongke--data row-5-7">
+                            <span class="thongke__header">Resuilt</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
     <footer>
         <i class="fa-solid fa-flag"></i> Mọi vấn đề về Web App liên hệ lại qua facebook <a href="https://www.facebook.com/Thag.wo">Thắng</a> để báo cáo nhằm cải thiện xin cảm ơn!
     </footer>
     
     <script src="./Source/js/app.js"></script>
+    <script type="module" src="./Source/js/html.js"></script>
+    <script type="module" src="./Source/js/ThongKe.js"></script>
 </body>
 
 </html>

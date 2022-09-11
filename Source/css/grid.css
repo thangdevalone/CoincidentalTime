@@ -1,0 +1,44 @@
+.row{
+    height: 100%;
+}
+.row-2-7{
+    height: 28%;
+}
+.row-5-7{
+    height: 72%;
+}
+.row-1-3{
+    height: 33%;
+}
+.row-2-3{
+    height: 66%;
+}
+.row-9-10{
+    height: 90%;
+}
+.row-1-4{
+    height: 25%;
+}
+.row-3-4{
+    height: 75%;
+}
+.col{
+    width: 100%;
+}
+.col-1-3{
+    width: 33%;
+    text-align: center;
+}
+.col-1-5{
+    width: 20%;
+}
+.col-4-5{
+    width: 80%;
+}
+.col-1-2{
+    width: 50%;
+    text-align: center;
+}
+.feedback__modes{
+    display: inline-block;
+}

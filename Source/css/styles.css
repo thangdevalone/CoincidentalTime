@@ -1,10 +1,14 @@
 :root{
     --basic-color:black;
+    --second--btn:rgb(149, 136, 136);
     --basic--btn:	rgb(2, 165, 2);
     --bg-hover: rgb(172, 172, 172);
     --bg--modal:rgba(124, 124, 124, 0.7);
+    --border--modal:rgb(99, 99, 99);
     --bg--modal-1:white;
     --exit--color:rgb(82,222,138);
+    --active--btn:rgb(255, 34, 34);
+    --hover--active-btn:rgb(249, 160, 160)
 }
 *{
     padding: 0;
@@ -18,6 +22,23 @@ body{
     overflow-x:hidden;
 }
 /* ---------------------------------------------------------------------------- */
+.display--flex{
+    display: flex !important;
+}
+.flex--between{
+    justify-content: space-between;
+}
+.flex-col{
+    flex-direction: column;
+}
+.zIndexHigerModal{
+    z-index: 101;
+}
+.footerModalThongKe{
+        bottom:0; 
+        left:0;
+        font-size: 14px;
+}
 header{
     text-align: center;
 }
@@ -25,9 +46,11 @@ header h2{
     margin-top: 20px;
 }
 .main{
+    margin: 0 50px 50px 50px;
+}
+.container{
     display: flex;
     justify-content: center;
-    margin: 0 50px 50px 50px;
     flex-wrap: wrap-reverse;
 }
 .wrapper table{
@@ -71,17 +94,27 @@ caption{
     outline: none;
     border-radius: 5px;
     cursor: pointer;
-    
+    height: 40px;
 }
 .btn:hover{
-    opacity: 0.8;
+    opacity: 0.85;
 }
 .btn__submit--data{
     margin-top: 20px;
-
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+}
+.btn__thongke{
+    width: 150px;
+    margin-top: 20px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.btn__tool{
+    background-color: var(--second--btn);
+    margin-top: 5px;
 }
 .modal{
     position: fixed;
@@ -113,6 +146,12 @@ caption{
     width: 600px;
     height: 500px;
 }
+.modal__thongke{
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0px;
+    padding: 0 20px 0 30px;
+}
 .message{
     position: absolute;
     font-size: 18px;
@@ -132,17 +171,37 @@ caption{
 .open{
     display: flex !important;
 }
-.modal__login .header{
+.header{
+    text-align: center;
     font-size: 20px;
     font-weight: bold;
+}
+.modal__login .header{
     margin-bottom: 20px;
 }
 .modal__data .header{
-    text-align: center;
     margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
     line-height: 30px;
+}
+.modal__thongke .header{
+    margin-top: 20px;
+    font-size: 25px;
+}
+.modal__thongke--main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.modal__thongke--body{
+    display: flex;
+    color:var(--border--modal);
+    border: 3px solid var(--border--modal);
+    height: 85%;
+    width: 95%;
+    font-weight: bold;
 }
 .modal__data .list{
     position: relative;
@@ -171,13 +230,83 @@ caption{
 .modal__data .list::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
+.modal__thongke--toolbar {
+   padding: 5px 10px 10px 10px;
+}
+.modal__thongke--data{
+    border-top:3px solid var(--border--modal);
+    padding: 5px 10px 10px 10px;
+  
+}
+.tools{
+    margin-top: 10px;
+    
+}
+.tool select,option{
+    cursor: pointer;
+
+}
+.ico{
+    cursor: pointer;
+    border-radius:50%;
+    border:3px solid var(--border--modal);
+    font-size: 20px;
+}
+.ico.active{
+    background-color: var(--active--btn);
+}
+.ico:hover{
+    background-color: var(--hover--active-btn);
+}
+.ico:first-child{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.group{
+    display: inline-block;
+    margin-top: 5px;
+}
+.tool:not(:last-child){
+    margin-right: 30px;
+}
+.modal__thongke--features{
+    border-right:3px solid var(--border--modal);
+}
+.thongke__header{
+    font-size: 20px;
+}
+.modal__thongke--features .thongke__header{
+    padding: 5px 10px 10px 10px;
+}
+.fearture__filter{
+    margin-top: 50px;
+}
+.resuilt__data {
+    margin-top: 5px;
+    overflow-y: scroll;
+    padding: 10px;
+}
+.thongke--feature{
+    border-top:  1px solid var(--border--modal);
+    border-bottom:  1px solid var(--border--modal);
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+.thongke--feature:hover{
+    background-color: var(--bg-hover);
+}
+.featuring{
+    background-color: var(--bg-hover);
+}
 .infor{
     padding-left: 5px;
     width: 90%;
     height: 50px;
     font-size: 18px;
     outline: none;
-    border-radius:5px ;
+    border-radius:5px;
     border: 1px solid var(--bg--modal);
 }
 .infor::placeholder{
@@ -207,12 +336,25 @@ article{
     display: flex;
     justify-content: space-around;
 }
-.col-1-3{
-    width: 33%;
-    text-align: center;
-}
 .list--body{
     margin-top:10px;
     font-size: 16px;
     font-weight: 500;
+}
+#tool_4-1 {
+    height: 30px;
+    font-size: 16px;
+}
+#tool_1-3{
+    width: 200px;
+}
+.resuilt__data{
+    display: flex;
+    flex-direction: column;
+}
+.feedback__days--name{
+    font-size: 16px;
+}
+.waitChoose{
+    display: inline-block;
 }

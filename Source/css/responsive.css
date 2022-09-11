@@ -1,7 +1,7 @@
 
 /* Large devices (laptops/desktops, 700px and up) */
 @media only screen and (min-width: 700px) {
-    .main{
+    .container{
         justify-content: center;
         flex-wrap: wrap-reverse;
     }
@@ -20,10 +20,15 @@
         transform: scale(1.4);
     }
 }
+@media only screen and (max-width: 1250px) {
+    .modal__thongke--toolbar{
+        overflow-y: scroll;
+    }
 
+}
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1250px) {
-    .main{
+@media only screen and (min-width: 1300px) {
+    .container{
         justify-content: space-between;
         flex-wrap:nowrap;
     }
