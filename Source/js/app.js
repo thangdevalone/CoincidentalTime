@@ -14,9 +14,9 @@ const api='https://6308f3a0722029d9dddc15b7.mockapi.io/api/v1/DataUserTime'
 const allModal=document.querySelectorAll('.modal')
 const message=document.querySelector('.message')
 
-const articleName=document.querySelector('.article__name')
-const articleClass=document.querySelector('.article__class')
-const articleMsv=document.querySelector('.article__msv')
+const articleName=document.querySelectorAll('.article__name')
+const articleClass=document.querySelectorAll('.article__class')
+const articleMsv=document.querySelectorAll('.article__msv')
 
 setting.addEventListener('click',()=>{
     localStorage.clear()
@@ -53,9 +53,11 @@ check(isPost)
 render() // render data
 
 function updateInfor(namePerson,msv,classPerson){
-        articleName.innerHTML=namePerson
-        articleClass.innerHTML=classPerson
-        articleMsv.innerHTML=msv
+    for(var i=0;i<articleClass.length;i++){
+        articleName[i].innerHTML=namePerson
+        articleClass[i].innerHTML=classPerson
+        articleMsv[i].innerHTML=msv
+    }
 }
 
 // Kiểm tra đăng nhập

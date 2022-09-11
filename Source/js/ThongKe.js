@@ -474,7 +474,7 @@ function feedbackAlgorithm(data){
             }  
            
         }
-        if (value_1==='_3'||value_1==='_2'){
+        if (value_1==='_3'|| value_1==='_4'){
             alert('Phần này đang được cập nhật muộn nhất nhất 20/9/2022')
         }
         if(value_1==='_5'){
