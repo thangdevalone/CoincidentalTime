@@ -62,6 +62,20 @@ header h2{
     border: 2px solid red;
     text-align: center;
 }
+.wrapper_feedback table{
+    margin: 0 auto;
+    border-collapse: collapse;
+    min-width: 400px;
+    width: 700px;
+    font-size: 14px;
+    min-height: 325px;
+    height: 350px;
+    border: 2px solid red;
+    text-align: center;
+}
+.wrapper_feedback table td:not(:first-child){
+    border-bottom: transparent;
+}
 table td,th{
     border-bottom:1px solid red;
 }
@@ -355,6 +369,24 @@ article{
 .feedback__days--name{
     font-size: 16px;
 }
+.feedback__days--min{
+    width: 100px;
+    padding-left:5px ;
+    outline: none;
+    height: 30px;
+}
+
 .waitChoose{
     display: inline-block;
+}
+.waitChoose2{
+    display: inline-block;
+}
+.setting{
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    top:10px;
+    right: 10px;
+    cursor: pointer;
 }

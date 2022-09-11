@@ -4,7 +4,7 @@ var msv=localStorage.getItem('msvKey')?localStorage.getItem('msvKey'):'Unknown'
 var classPerson=localStorage.getItem('classKey')?localStorage.getItem('classKey'):'Unknown'
 var isPost=Number(localStorage.getItem('postKey'))?Number(localStorage.getItem('postKey')):0 // Là 0 thì gửi đi còn 1 thì gỡ
 const isLogin=Boolean(localStorage.getItem('localKey'))?Boolean(localStorage.getItem('localKey')):false
-
+const setting=document.querySelector('.setting')
 const btnSubmit=document.querySelector('.btn__submit--data')
 const btnInfor=document.querySelector('.btn__submit--infor')
 
@@ -14,10 +14,14 @@ const api='https://6308f3a0722029d9dddc15b7.mockapi.io/api/v1/DataUserTime'
 const allModal=document.querySelectorAll('.modal')
 const message=document.querySelector('.message')
 
-const articleName=document.querySelectorAll('.article__name')
-const articleClass=document.querySelectorAll('.article__class')
-const articleMsv=document.querySelectorAll('.article__msv')
+const articleName=document.querySelector('.article__name')
+const articleClass=document.querySelector('.article__class')
+const articleMsv=document.querySelector('.article__msv')
 
+setting.addEventListener('click',()=>{
+    localStorage.clear()
+    location.reload()
+})
 
 function check(isPost){
     if (isPost){
@@ -49,16 +53,14 @@ check(isPost)
 render() // render data
 
 function updateInfor(namePerson,msv,classPerson){
-    for(let i=0;i<articleName.length;i++){
-        articleName[i].innerHTML=namePerson
-        articleClass[i].innerHTML=classPerson
-        articleMsv[i].innerHTML=msv
-    }
+        articleName.innerHTML=namePerson
+        articleClass.innerHTML=classPerson
+        articleMsv.innerHTML=msv
 }
 
 // Kiểm tra đăng nhập
 if(isLogin){
-    updateInfor(namePerson,classPerson,msv)
+    updateInfor(namePerson,msv,classPerson)
     allModal[1].classList.remove('open')
 }
 // GET data

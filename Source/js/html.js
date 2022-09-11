@@ -64,7 +64,7 @@ const html__toolbarFilter=`
         </div>
     </div> 
 `
-const html__toolbarResuilt=`
+const html__toolbarFeedback=`
 <span class="thongke__header">Toolbar</span>
 <div class="tools toolbar__feedback">
     <span class="tool feedback__modes">
@@ -76,10 +76,11 @@ const html__toolbarResuilt=`
             <option value="_3">Tìm người đăng kí nhiều nhất</option>
             <option value="_4">Tìm người đăng kí ít nhất</option>  
             
-            <option value="_5">Tìm những ngày có thể làm việc chung với nhiều thành viên tham gia đông</option>                                      
+            <option value="_5">Tìm những ngày có thể làm việc chung với thành viên tham gia đông</option>                                      
 
         </select>
     </span>
+
     <div class="waitChoose"></div>
 
     <span class="tool feedback__submit">
@@ -94,24 +95,15 @@ const html__toolbarResuilt=`
 `
 const html_resuilt=`
     <span class="thongke__header">Resuilt</span>
-    <div class="resuilt__data row-9-10">
-                                    
+    <div class="resuilt__data row-9-10">                    
     </div>
 `
+
 const html_feedback_options5=`
 <span class="waitChoose tool feedback__modes">
-        <label for="feedback_mode" class="feedback__days--name">Số ngày tối thiểu trong tuần: </label>
-        <select name="feedback_mode" id="tool_4-2">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                </select>
-    </span>
+        <label for="feedback_mode" class="feedback__days--name">Số người tối thiểu mỗi ca: </label>
+        <input type="Number" class="feedback__days--min" id="tool_4-3" placeholder='Default=2'/>
+</span>
 `
 const html__toolbarList=`
     <span class="thongke__header">Toolbar</span>                   
@@ -179,14 +171,141 @@ const html__toolbarListDays=`
     </div>
     </span>
 `
+const html__table_feedback=`
+<div class="wrapper_feedback">
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+        </tr>
+        <tr>
+            <td>7:00-8:00</td>
+            <td class="chart" id="array?0_0"></td>
+            <td class="chart" id="array?0_1"></td>
+            <td class="chart" id="array?0_2"></td>
+            <td class="chart" id="array?0_3"></td>
+            <td class="chart" id="array?0_4"></td>
+            <td class="chart" id="array?0_5"></td>
+            <td class="chart" id="array?0_6"></td>
+        </tr>
+        <tr>
+            <td>8:00-9:00</td>
+            <td class="chart" id="array?1_0"></td>
+            <td class="chart" id="array?1_1"></td>
+            <td class="chart" id="array?1_2"></td>
+            <td class="chart" id="array?1_3"></td>
+            <td class="chart" id="array?1_4"></td>
+            <td class="chart" id="array?1_5"></td>
+            <td class="chart" id="array?1_6"></td>
+        </tr>
+        <tr>
+            <td>9:00-10:00</td>
+            <td class="chart" id="array?2_0"></td>
+            <td class="chart" id="array?2_1"></td>
+            <td class="chart" id="array?2_2"></td>
+            <td class="chart" id="array?2_3"></td>
+            <td class="chart" id="array?2_4"></td>
+            <td class="chart" id="array?2_5"></td>
+            <td class="chart" id="array?2_6"></td>
+        </tr>
+        <tr>
+            <td>10:00-11:00</td>
+            <td class="chart" id="array?3_0"></td>
+            <td class="chart" id="array?3_1"></td>
+            <td class="chart" id="array?3_2"></td>
+            <td class="chart" id="array?3_3"></td>
+            <td class="chart" id="array?3_4"></td>
+            <td class="chart" id="array?3_5"></td>
+            <td class="chart" id="array?3_6"></td>
+        </tr>
+        <tr>
+            <td>11:00-12:00</td>
+            <td class="chart" id="array?4_0"></td>
+            <td class="chart" id="array?4_1"></td>
+            <td class="chart" id="array?4_2"></td>
+            <td class="chart" id="array?4_3"></td>
+            <td class="chart" id="array?4_4"></td>
+            <td class="chart" id="array?4_5"></td>
+            <td class="chart" id="array?4_6"></td>
+        </tr>
+        <tr>
+            <td>12:00-13:00</td>
+            <td class="chart" id="array?5_0"></td>
+            <td class="chart" id="array?5_1"></td>
+            <td class="chart" id="array?5_2"></td>
+            <td class="chart" id="array?5_3"></td>
+            <td class="chart" id="array?5_4"></td>
+            <td class="chart" id="array?5_5"></td>
+            <td class="chart" id="array?5_6"></td>
+        </tr>
+        <tr>
+            <td>13:00-14:00</td>
+            <td class="chart" id="array?6_0"></td>
+            <td class="chart" id="array?6_1"></td>
+            <td class="chart" id="array?6_2"></td>
+            <td class="chart" id="array?6_3"></td>
+            <td class="chart" id="array?6_4"></td>
+            <td class="chart" id="array?6_5"></td>
+            <td class="chart" id="array?6_6"></td>
+        </tr>
+        <tr>
+            <td>14:00-15:00</td>
+            <td class="chart" id="array?7_0"></td>
+            <td class="chart" id="array?7_1"></td>
+            <td class="chart" id="array?7_2"></td>
+            <td class="chart" id="array?7_3"></td>
+            <td class="chart" id="array?7_4"></td>
+            <td class="chart" id="array?7_5"></td>
+            <td class="chart" id="array?7_6"></td>
+        </tr>
+        <tr>
+            <td>15:00-16:00</td>
+            <td class="chart" id="array?8_0"></td>
+            <td class="chart" id="array?8_1"></td>
+            <td class="chart" id="array?8_2"></td>
+            <td class="chart" id="array?8_3"></td>
+            <td class="chart" id="array?8_4"></td>
+            <td class="chart" id="array?8_5"></td>
+            <td class="chart" id="array?8_6"></td>
+        </tr>
+        <tr>
+            <td>16:00-17:00</td>
+            <td class="chart" id="array?9_0"></td>
+            <td class="chart" id="array?9_1"></td>
+            <td class="chart" id="array?9_2"></td>
+            <td class="chart" id="array?9_3"></td>
+            <td class="chart" id="array?9_4"></td>
+            <td class="chart" id="array?9_5"></td>
+            <td class="chart" id="array?9_6"></td>
+        </tr>
+        <tr>
+            <td>17:00-18:00</td>
+            <td class="chart" id="array?10_0"></td>
+            <td class="chart" id="array?10_1"></td>
+            <td class="chart" id="array?10_2"></td>
+            <td class="chart" id="array?10_3"></td>
+            <td class="chart" id="array?10_4"></td>
+            <td class="chart" id="array?10_5"></td>
+            <td class="chart" id="array?10_6"></td>
+        </tr>
+    </table>
+</div>
+`
 const oj={
     html__toolbarFilter: html__toolbarFilter,
     html__toolbarList: html__toolbarList,
     html__toolbarListDays: html__toolbarListDays,
     html__toolbarListHours: html__toolbarListHours,
-    html__toolbarResuilt: html__toolbarResuilt,
+    html__toolbarResuilt: html__toolbarFeedback,
     html__resuilt: html_resuilt,
-    html_feedback_options5:html_feedback_options5
+    html__feedback_options5:html_feedback_options5,
+    html__table_feedback: html__table_feedback
 }
 
 export default oj

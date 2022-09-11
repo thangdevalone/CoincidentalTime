@@ -63,8 +63,11 @@ function chooseList(html){
 function chooseFeedback(html){
     const tool4_1=document.querySelector('#tool_4-1');
     tool4_1.addEventListener('change',()=>{
+        const resuiltTable=document.querySelector('.resuilt__data');
         const waitChoose=document.querySelector('.waitChoose');
-        tool4_1.value==='_5'?render(html.html_feedback_options5,waitChoose,1):render('<div class="waitChoose"></div>',waitChoose,1)
+        tool4_1.value==='_5'?render(html.html__feedback_options5,waitChoose,1):render('<div class="waitChoose"></div>',waitChoose,1)
+        tool4_1.value==='_5'?render(html.html__table_feedback, resuiltTable,0):render('', resuiltTable,0)
+
     })
 }
 
@@ -124,7 +127,6 @@ const handleClickFeatures = (data)=>{
             else{
                 if(index === 2){
                     if(lastIndex){
-
                         features[lastIndex].classList.add('featuring')
                     }
                     alert('Xin lỗi tớ chưa phát triển xong phần này nên các bạn đợi sau nhé ❤')
@@ -184,12 +186,22 @@ const dataFix__All=(value)=>{
     })
     return resuilt
 }
-const getMinMax=(array,val)=>{
-    return array.map((item,i)=>{
-        if(item.soLuong===val){
-            return item
-        }
-    })
+const getMMLW=(array,val,flag)=>{
+    if (flag==='over'){
+        return array.map((item,i)=>{
+            if(item.soLuong>=val){
+                return item
+            }
+        })
+    }
+    if(flag==='minmax'){
+        return array.map((item,i)=>{
+            if(item.soLuong===val){
+                return item
+            }
+        })
+    }
+        
 }
 const counterData= (value)=>{
     var resuilt={}
@@ -432,8 +444,6 @@ function renderListResuilt(resuilt,resuiltTable,isVal1,isVal2){
 function feedbackAlgorithm(data){
     const btnTool=document.querySelector('.btn__tool');
     const resuiltTable=document.querySelector('.resuilt__data');
-    var _value1=null;
-    var _value2=null;
     const resuilt=data
     const soLuongTime= counterData(dataFix__All(resuilt))
     
@@ -448,36 +458,58 @@ function feedbackAlgorithm(data){
         return resuiltFixInit;
     };
     btnTool.addEventListener('click',()=>{
-
         const value_1=document.querySelector('#tool_4-1').value;
+
+
         if(value_1==='_1' || value_1==='_2'){
             if(value_1==='_1'){
                 const resuiltFixSorted = resuiltFix().sort(dynamicSort("-soLuong"))
-                renderFeedbackResuilt(getMinMax(resuiltFixSorted,resuiltFixSorted[0].soLuong),resuiltTable,0,1,2)
+                const getMax=getMMLW(resuiltFixSorted,resuiltFixSorted[0].soLuong,'minmax')
+                renderFeedbackResuilt(getMax,resuiltTable,1)
             }  
             if(value_1==='_2'){
                 const resuiltFixSorted = resuiltFix().sort(dynamicSort("soLuong"))
-                renderFeedbackResuilt(getMinMax(resuiltFixSorted.reverse(),resuiltFixSorted.reverse()[0].soLuong),resuiltTable,0,2,2)
+                const getMin=getMMLW(resuiltFixSorted,resuiltFixSorted[0].soLuong,'minmax')
+                renderFeedbackResuilt(getMin,resuiltTable,2)
             }  
            
+        }
+        if (value_1==='_3'||value_1==='_2'){
+            alert('Phần này đang được cập nhật muộn nhất nhất 20/9/2022')
+        }
+        if(value_1==='_5'){
+            const value_2=document.querySelector('#tool_4-3').value||2;
+
+            const resuiltFixSorted = resuiltFix().sort(dynamicSort("-soLuong"))
+            const getOver=getMMLW(resuiltFixSorted,value_2,'over')
+            renderFeedbackResuilt(getOver,resuiltTable,5)
         }
         
     
     })
 }
 
-function renderFeedbackResuilt(resuilt,resuiltTable,isVal1,choose,loop){
-    const resuiltFixThu=resuilt.map((item)=>{ // fix các lấy các ngày bỏ qua giờ
+function renderFeedbackResuilt(resuilt,resuiltTable,choose){
+    if(choose===5){ // reset color
+        const table=document.querySelectorAll('.chart');
+        table.forEach((item)=>{
+            item.style.backgroundColor='white';
+        })
+    }
+    const resuiltFixUndefined = resuilt.filter((item)=>{ // fix bỏ qua các undefined
         if (item !== undefined){
-        
-            return {...item,thu:item.thu.slice(0,item.thu.indexOf(','))}
+            return true
         }
+        else return false
+    })
+    const resuiltFixThu=resuiltFixUndefined.map((item)=>{ // fix lấy các ngày, bỏ qua giờ
+            return {...item,thu:item.thu.slice(0,item.thu.indexOf(','))}
+        
     })
     const resuiltFixDistinct=()=>{ // fix cacs thứ giống nhau
         var resuilt=[]
         resuiltFixThu.filter((item,index)=>{
             var flag=true
-            console.log(index)
             if(item===undefined){
                 return false
             }
@@ -493,29 +525,63 @@ function renderFeedbackResuilt(resuilt,resuiltTable,isVal1,choose,loop){
         })
         return resuilt
     }
-        
-    console.log(resuiltFixDistinct())
-    const html= resuiltFixDistinct().map((val)=> {
-                if((choose===1 || choose===2) && (loop===1 ||loop===2)){
-                    if(loop===1){
-                        loop=0
-                    }
+    const html=()=>{
+        if(choose===1 || choose===2 ){
+            return resuiltFixDistinct().map((val)=> {
                     return `<div class='col display--flex flex--between'>
                                         <div class="col-1-2">[ ${val.thu} ]</div>
                                         <div class="col-1-2">${val.soLuong} người đã đăng kí</div>
                                         </div>`
+            }) 
+        }
+
+        if (choose===5){
+            const DATE=['Thứ hai','Thứ ba','Thứ tư','Thứ năm','Thứ sáu','Thứ bảy','Chủ nhật']
+            const TIME=['7:00-8:00','8:00-9:00','9:00-10:00','10:00-11:00','11:00-12:00','12:00-13:00','13:00-14:00','14:00-15:00','15:00-16:00','16:00-17:00','17:00-18:00']
+            var randomColor=[]
+                for(var i=0;i<resuiltFixUndefined[0].soLuong;i++){
+                    randomColor.push(Math.floor(Math.random()*16777215).toString(16))
                 }
+            // tô màu đồ thì by thắng đồ thị 2 chiều time date
+            const filterTimeDate=(string,flag)=>{
+                if (flag===0)
+                
+                return string.slice(0,string.indexOf(','))
+                else
+                return string.slice(string.indexOf(',')+2,string.length)
+            }
+            const drawColorChart=()=>{
+                var arrayRows=[]
+                var arrayCols=[]
+                resuiltFixUndefined.forEach((item,index)=>{
+                    setTimeout(()=>{
+                    const i=TIME.indexOf(filterTimeDate(item.thu,1))
+                    const j=DATE.indexOf(filterTimeDate(item.thu,0))
+                    const pos=document.getElementById(`array?${i}_${j}`)
+                        
+                    pos.style.backgroundColor=`#${randomColor[item.soLuong-1]}`;
+                },100*index)
+                })
+                
+            }
+            drawColorChart()
 
-
-    }) 
-    resuiltTable.innerHTML=html.join('')
+            return []
+        }
+    }
+    if(choose!==5){
+        resuiltTable.innerHTML=html().join('')
+    }
+    else{
+        html()
+    }
 }
 //----------------------------------------------------------------
 
 
 function dynamicSort(property) { // sắp xếp cho mảng đối tượng
     var sortOrder = 1;
-    if(property[0] === "-") {
+    if(property[0] === "-") { // sắp xếp tăng else giảm
         sortOrder = -1;
         property = property.substr(1);
     }
