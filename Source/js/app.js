@@ -8,7 +8,7 @@ const setting=document.querySelector('.setting')
 const btnSubmit=document.querySelector('.btn__submit--data')
 const btnInfor=document.querySelector('.btn__submit--infor')
 
-const ting= new Audio('../Source/ting.ogg')
+const ting= new Audio('./Source/ting.ogg')
 const api='https://6308f3a0722029d9dddc15b7.mockapi.io/api/v1/DataUserTime'
 
 const allModal=document.querySelectorAll('.modal')
