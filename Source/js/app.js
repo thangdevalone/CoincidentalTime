@@ -52,7 +52,7 @@ function render(){
 check(isPost)
 render() // render data
 
-function updateInfor(namePerson,msv,classPerson){
+function updateInfor(namePerson,classPerson,msv){
     for(var i=0;i<articleClass.length;i++){
         articleName[i].innerHTML=namePerson
         articleClass[i].innerHTML=classPerson
