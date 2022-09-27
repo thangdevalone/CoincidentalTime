@@ -9,7 +9,7 @@ const btnSubmit=document.querySelector('.btn__submit--data')
 const btnInfor=document.querySelector('.btn__submit--infor')
 
 const ting= new Audio('./Source/ting.ogg')
-const api='https://6308f3a0722029d9dddc15b7.mockapi.io/api/v1/DataUserTime'
+const api='https://63331d67433198e79dbfa3d4.mockapi.io/api/DataUsersTime'
 
 const allModal=document.querySelectorAll('.modal')
 const message=document.querySelector('.message')
