@@ -40,7 +40,7 @@ btnThongKe.addEventListener('click',()=>{
 
 })
 
-function loadData(thongkeDuLieu){
+function loadData(){
         getData((data)=>{
             btnThongKe.innerHTML ='Thống kê dữ liệu'
             body.style.overflowY == 'hidden'?body.style.overflowY ='scroll': body.style.overflowY ='hidden'

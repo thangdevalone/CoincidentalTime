@@ -9,7 +9,7 @@ const btnSubmit=document.querySelector('.btn__submit--data')
 const btnInfor=document.querySelector('.btn__submit--infor')
 
 const ting= new Audio('./Source/ting.ogg')
-const api='https://63331d67433198e79dbfa3d4.mockapi.io/api/DataUsersTime'
+const api='https://6308f3a0722029d9dddc15b7.mockapi.io/api/v1/DataUserTime'
 
 const allModal=document.querySelectorAll('.modal')
 const message=document.querySelector('.message')
@@ -17,7 +17,10 @@ const message=document.querySelector('.message')
 const articleName=document.querySelectorAll('.article__name')
 const articleClass=document.querySelectorAll('.article__class')
 const articleMsv=document.querySelectorAll('.article__msv')
+const loader=`
+<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
 
+`
 setting.addEventListener('click',()=>{
     localStorage.clear()
     location.reload()
@@ -213,22 +216,30 @@ function delCoutingPeople(item){
 const tableResuilt =document.querySelector('.main__resuilt table')
 // lắng nghe click vào table
 tableResuilt.addEventListener('click',(e)=>{
-    const DATE=['Thứ hai','Thứ ba','Thứ tư','Thứ năm','Thứ sáu','Thứ bảy','Chủ nhật']
-    const TIME=['7:00-8:00','8:00-9:00','9:00-10:00','10:00-11:00','11:00-12:00','12:00-13:00','13:00-14:00','14:00-15:00','15:00-16:00','16:00-17:00','17:00-18:00']
-    const tdCursor = e.target.closest('td:not(:first-child)')
-    const idNoConvert=tdCursor.querySelector("span span").id
-    const idDay=Number(idNoConvert[2])-1
-    const idTime=idNoConvert.length<6?Number(idNoConvert[4])-1:Number(idNoConvert.slice(4,6))-1
-    const day= DATE[idDay]
-    const time=TIME[idTime]
-    allModal[2].classList.toggle('open')
-    document.querySelector('.day').innerHTML=day
-    document.querySelector('.hour').innerHTML=time
-    getData(api,(response) => {
-        const data=convertResponse(response,idNoConvert.slice(2,6))
-        console.log(data)
-        renderPeopleRegister(data)
-    })
+    var tdCursor =e.target.closest('td:not(:first-child)')?e.target.closest('td:not(:first-child)'):""
+    if(tdCursor!==""){
+        const dataTdCursor=tdCursor.innerHTML
+        const list=document.querySelector(".modal__data .list .list--body")
+        const DATE=['Thứ hai','Thứ ba','Thứ tư','Thứ năm','Thứ sáu','Thứ bảy','Chủ nhật']
+        const TIME=['7:00-8:00','8:00-9:00','9:00-10:00','10:00-11:00','11:00-12:00','12:00-13:00','13:00-14:00','14:00-15:00','15:00-16:00','16:00-17:00','17:00-18:00']
+        const idNoConvert=tdCursor.querySelector("span span").id
+        const idDay=Number(idNoConvert[2])-1
+        const idTime=idNoConvert.length<6?Number(idNoConvert[4])-1:Number(idNoConvert.slice(4,6))-1
+        const day= DATE[idDay]
+        const time=TIME[idTime]
+        const tableInit=e.target;
+        console.log(tableInit)
+        document.querySelector('.day').innerHTML=day
+        document.querySelector('.hour').innerHTML=time
+        tdCursor.innerHTML=loader
+        getData(api,(response) => {
+            allModal[2].classList.toggle('open')
+            tdCursor.innerHTML=dataTdCursor;
+            const data=convertResponse(response,idNoConvert.slice(2,6))
+            renderPeopleRegister(data,list)
+        })
+    }
+        
 })
 // chuyển sang dạng data dễ xử dụng hơn
 function convertResponse(response,idFind) {
@@ -248,8 +259,7 @@ function convertResponse(response,idFind) {
     return DATASPEOPLE
 }
 
-function renderPeopleRegister(datas){
-    const list=document.querySelector(".modal__data .list .list--body")
+function renderPeopleRegister(datas,list){
     // DOM render họ tên
     const html_name=datas.map(data => {
         return `<div>${data.namePerson}</div>`
